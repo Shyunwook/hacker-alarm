@@ -5,15 +5,26 @@
     <title>Information</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <link href="/css/style.css" rel="stylesheet">
   </head>
+  <!-- <iframe id="village" src="http://hacker-village.innolab.us/"> -->
+    <embed type="text/html" id="village" src="http://hacker-village.innolab.us/">
   <body>
+
     <img id="info">
     <script>
       var socket = io();
 
-      socket.on('change',function(img){
+      socket.on('change',function(option){
         console.log('test');
-        $('#info').attr('src','image/'+img+'.jpg');
+        if(option=="village"){
+          $('#village').css('display','initial');
+          $('#info').hide();
+        }else{
+          $('#info').show();
+          $('#info').attr('src','image/'+option+'.jpg');
+          $('#village').hide();
+        }
       })
     </script>
   </body>

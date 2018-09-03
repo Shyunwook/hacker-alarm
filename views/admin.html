@@ -5,10 +5,12 @@
     <title>Information</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <link href="/css/timeline.css" rel="stylesheet">
   </head>
   <body>
     <button id="timetable">시간표</button>
     <button id="snack">간식</button>
+    <button id="village">해커 빌리지</button>
     <script>
       var socket = io();
 
@@ -19,6 +21,11 @@
 
       $('#snack').on('click',function(e){
         socket.emit('trigger','chicken');
+        e.preventDefault();
+      })
+
+      $('#village').on('click',function(e){
+        socket.emit('trigger','village');
         e.preventDefault();
       })
     </script>
