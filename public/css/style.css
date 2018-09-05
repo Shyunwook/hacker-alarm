@@ -24,6 +24,7 @@ body{
 #timer{
   height: fit-content;
   margin-top: 130px;
+  visibility: hidden;
 }
 
 .verticalPC button, .beam button{
