@@ -5,18 +5,21 @@
     <title>Information</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+
+    <script src="/timer/jquery.time-to.js"></script>
+    <link href="/timer/timeTo.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
   </head>
   <!-- <iframe id="village" src="http://hacker-village.innolab.us/"> -->
-    <embed type="text/html" id="village" src="http://hacker-village.innolab.us/">
   <body>
-
+    <embed type="text/html" id="village" src="http://hacker-village.innolab.us/">
     <img id="info">
+    <div id="countdown"></div>
+
     <script>
       var socket = io();
 
       socket.on('change',function(option){
-        console.log('test');
         if(option=="village"){
           $('#village').css('display','initial');
           $('#info').hide();
@@ -26,6 +29,16 @@
           $('#village').hide();
         }
       })
+
+      $('#countdown').timeTo({
+        timeTo: new Date(new Date('Sep 6 2018 00:00:00 GMT+0900 (한국 표준시)')),
+        theme: "black",
+        displayCaptions: true,
+        fontSize: 180,
+        captionSize: 14
+      });
+
+
     </script>
   </body>
 </html>

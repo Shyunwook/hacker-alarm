@@ -5,12 +5,20 @@
     <title>Information</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
-    <link href="/css/timeline.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
   </head>
-  <body>
-    <button id="timetable">시간표</button>
-    <button id="snack">간식</button>
-    <button id="village">해커 빌리지</button>
+  <body style="padding: 30px;">
+    <div class="verticalPC">
+      <h1>세로PC 컨트롤!!!!!</h1>
+      <button id="timetable">시간표</button>
+      <button id="snack">간식</button>
+      <button id="village">Hacker Village</button>
+    </div>
+    <div class="beam">
+      <h1>빔화면 컨트롤!!!!!</h1>
+      <button id="timer_btn">타이머</button>
+      <button id="hack_main">헤커톤 메인 화면</button>
+    </div>
     <script>
       var socket = io();
 
@@ -26,6 +34,16 @@
 
       $('#village').on('click',function(e){
         socket.emit('trigger','village');
+        e.preventDefault();
+      })
+
+      $('#timer_btn').on('click',function(e){
+        socket.emit('trigger','timer');
+        e.preventDefault();
+      })
+
+      $('#hack_main').on('click',function(e){
+        socket.emit('trigger','hack_main');
         e.preventDefault();
       })
     </script>

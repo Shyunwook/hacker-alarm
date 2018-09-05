@@ -9,15 +9,19 @@ app.engine('html',require('ejs').renderFile);
 
 app.use(express.static('public'));
 
-app.get('/',function(req,res){
-  res.render('screen.html');
+app.get('/vertical',function(req,res){
+  res.render('vertical.html');
+});
+
+app.get('/beam',function(req,res){
+  res.render('beam.html');
 });
 
 app.get('/admin',function(req,res){
   io.on('connection',function(socket){
-    socket.on('trigger',function(image){
+    socket.on('trigger',function(option){
       console.log('event send!');
-      io.emit('change',image);
+      io.emit('change',option);
     })
   })
   res.render('admin.html');
