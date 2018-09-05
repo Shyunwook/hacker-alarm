@@ -13,30 +13,30 @@
   <!-- <iframe id="village" src="http://hacker-village.innolab.us/"> -->
   <body>
     <embed type="text/html" id="village" src="http://hacker-village.innolab.us/">
-    <img id="info">
-    <div id="countdown"></div>
-
+    <div id="vertical_timetable">
+      <img src="./image/p_timetable.png">
+    </div>
+    <div id="vertical_main">
+      <img src="./image/p_main.png">
+    </div>
     <script>
       var socket = io();
 
       socket.on('change',function(option){
         if(option=="village"){
-          $('#village').css('display','initial');
-          $('#info').hide();
-        }else{
-          $('#info').show();
-          $('#info').attr('src','image/'+option+'.jpg');
-          $('#village').hide();
+          $('#village').css('visibility','visible');
+          $('#vertical_timetable').css('visibility','hidden');
+          $('#vertical_main').css('visibility','hidden');
+        }else if(option=="timetable"){
+          $('#village').css('visibility','hidden');
+          $('#vertical_timetable').css('visibility','visible');
+          $('#vertical_main').css('visibility','hidden');
+        }else if(option=="vertical_main"){
+          $('#village').css('visibility','hidden');
+          $('#vertical_timetable').css('visibility','hidden');
+          $('#vertical_main').css('visibility','visible');
         }
       })
-
-      $('#countdown').timeTo({
-        timeTo: new Date(new Date('Sep 6 2018 00:00:00 GMT+0900 (한국 표준시)')),
-        theme: "black",
-        displayCaptions: true,
-        fontSize: 180,
-        captionSize: 14
-      });
 
 
     </script>

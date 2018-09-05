@@ -10,29 +10,29 @@
   <body style="padding: 30px;">
     <div class="verticalPC">
       <h1>세로PC 컨트롤!!!!!</h1>
+      <button id="vertical_btn">세로PC 메인 화면</button>
       <button id="timetable">시간표</button>
-      <button id="snack">간식</button>
-      <button id="village">Hacker Village</button>
+      <button id="village_btn">Hacker Village</button>
     </div>
     <div class="beam">
       <h1>빔화면 컨트롤!!!!!</h1>
+      <button id="hack_main">빔 메인 화면</button>
       <button id="timer_btn">타이머</button>
-      <button id="hack_main">헤커톤 메인 화면</button>
     </div>
     <script>
       var socket = io();
 
+      $('#vertical_btn').on('click',function(e){
+        socket.emit('trigger','vertical_main');
+        e.preventDefault();
+      })
+
       $('#timetable').on('click',function(e){
-        socket.emit('trigger','jock');
+        socket.emit('trigger','timetable');
         e.preventDefault();
       })
 
-      $('#snack').on('click',function(e){
-        socket.emit('trigger','chicken');
-        e.preventDefault();
-      })
-
-      $('#village').on('click',function(e){
+      $('#village_btn').on('click',function(e){
         socket.emit('trigger','village');
         e.preventDefault();
       })
