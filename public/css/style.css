@@ -56,7 +56,7 @@ body{
   height: 100vh;
 }
 
-#info p{
+#info span{
   margin: 0;
   font-size: 154px;
   font-weight: bold;

@@ -30,7 +30,7 @@
 
     </div>
     <div id="info">
-      <p class="info_text"></p>
+      <span class="info_text"></span>
     </div>
     <div id="submit">
 
@@ -75,7 +75,7 @@
           $('#info').css('display','inline-table');
           // var text = msg.replace("<br>","\r\n");
           // console.log(text);
-          $('.info_text').text(msg);
+          $('.info_text').html(msg);
           $('#submit').hide();
         }else if(option=="submit"){
           $('.timer_box').hide();
