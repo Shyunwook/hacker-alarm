@@ -29,6 +29,16 @@ body{
 
 #pizza{
   display: none;
+  height: 100vh;
+  background: url(../image/pizza.png);
+  background-size: cover;
+}
+
+#manito{
+  display: none;
+  height: 100vh;
+  background: url(../image/manito.png);
+  background-size: cover;
 }
 
 .verticalPC button, .beam button{
