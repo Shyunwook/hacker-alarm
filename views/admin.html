@@ -32,6 +32,7 @@
       <button id="timer_btn">타이머</button>
       <button id="pizza_btn">피자!!</button>
       <button id="manito_btn">마니또</button>
+      <button id="info_btn">인포</button>
     </div>
     <script>
       var socket = io();
@@ -98,6 +99,11 @@
 
       $('#manito_btn').on('click',function(e){
         socket.emit('trigger','manito');
+        e.preventDefault();
+      })
+
+      $('#info_btn').on('click',function(e){
+        socket.emit('trigger','info');
         e.preventDefault();
       })
     </script>

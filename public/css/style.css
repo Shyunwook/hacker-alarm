@@ -41,6 +41,13 @@ body{
   background-size: cover;
 }
 
+#info{
+  display: none;
+  height: 100vh;
+  background: url(../image/info.png);
+  background-size: cover;
+}
+
 .verticalPC button, .beam button{
   height: 60px;
   font-size: 15px;
