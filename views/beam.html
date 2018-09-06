@@ -23,15 +23,37 @@
         <div id="timer"></div>
       </div>
     </div>
+    <div id="pizza">
+      <img src="./image/pizza.png">
+    </div>
+    <div id="manito">
+      <img src="./image/manito.png">
+    </div>
 
     <script>
       var socket = io();
 
       socket.on('change',function(option){
         if(option=="timer"){
-          $('#timer').css('visibility','visible')
+          $('#timer').css('visibility','visible');
+          $('.timer_box').show();
+          $('#pizza').hide();
+          $('#manito').hide();
         }else if(option=="hack_main"){
-          $('#timer').css('visibility','hidden')
+          $('#timer').css('visibility','hidden');
+          $('.timer_box').show();
+          $('#pizza').hide();
+          $('#manito').hide();
+        }else if(option=="pizza"){
+          $('.timer_box').hide();
+          $('#pizza').show();
+          $('#timer').css('visibility','hidden');
+          $('#manito').hide();
+        }else if(option=="manito"){
+          $('.timer_box').hide();
+          $('#pizza').hide();
+          $('#timer').css('visibility','hidden');
+          $('#manito').show();
         }
       })
 

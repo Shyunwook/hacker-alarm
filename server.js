@@ -13,6 +13,15 @@ app.get('/vertical',function(req,res){
   res.render('vertical.html');
 });
 
+app.get('/vertical2',function(req,res){
+  res.render('vertical2.html');
+});
+
+app.get('/vertical3',function(req,res){
+  res.render('vertical3.html');
+});
+
+
 app.get('/beam',function(req,res){
   res.render('beam.html');
 });

@@ -9,15 +9,29 @@
   </head>
   <body style="padding: 30px;">
     <div class="verticalPC">
-      <h1>세로PC 컨트롤!!!!!</h1>
+      <h1>세로PC 컨트롤!!!!!1번!!!!!</h1>
       <button id="vertical_btn">세로PC 메인 화면</button>
       <button id="timetable">시간표</button>
       <button id="village_btn">Hacker Village</button>
+    </div>
+    <div class="verticalPC">
+      <h1>세로PC 컨트롤!!!!!2번!!!!!</h1>
+      <button id="vertical_btn2">세로PC 메인 화면</button>
+      <button id="timetable2">시간표</button>
+      <button id="village_btn2">Hacker Village</button>
+    </div>
+    <div class="verticalPC">
+      <h1>세로PC 컨트롤!!!!!3번!!!!!</h1>
+      <button id="vertical_btn3">세로PC 메인 화면</button>
+      <button id="timetable3">시간표</button>
+      <button id="village_btn3">Hacker Village</button>
     </div>
     <div class="beam">
       <h1>빔화면 컨트롤!!!!!</h1>
       <button id="hack_main">빔 메인 화면</button>
       <button id="timer_btn">타이머</button>
+      <button id="pizza_btn">피자!!</button>
+      <button id="manito_btn">마니또</button>
     </div>
     <script>
       var socket = io();
@@ -36,7 +50,37 @@
         socket.emit('trigger','village');
         e.preventDefault();
       })
+      //////////////////////////////
+      $('#vertical_btn2').on('click',function(e){
+        socket.emit('trigger','vertical_main2');
+        e.preventDefault();
+      })
 
+      $('#timetable2').on('click',function(e){
+        socket.emit('trigger','timetable2');
+        e.preventDefault();
+      })
+
+      $('#village_btn2').on('click',function(e){
+        socket.emit('trigger','village2');
+        e.preventDefault();
+      })
+      /////////////////////////////
+      $('#vertical_btn3').on('click',function(e){
+        socket.emit('trigger','vertical_main3');
+        e.preventDefault();
+      })
+
+      $('#timetable3').on('click',function(e){
+        socket.emit('trigger','timetable3');
+        e.preventDefault();
+      })
+
+      $('#village_btn3').on('click',function(e){
+        socket.emit('trigger','village3');
+        e.preventDefault();
+      })
+      /////////////
       $('#timer_btn').on('click',function(e){
         socket.emit('trigger','timer');
         e.preventDefault();
@@ -44,6 +88,16 @@
 
       $('#hack_main').on('click',function(e){
         socket.emit('trigger','hack_main');
+        e.preventDefault();
+      })
+
+      $('#pizza_btn').on('click',function(e){
+        socket.emit('trigger','pizza');
+        e.preventDefault();
+      })
+
+      $('#manito_btn').on('click',function(e){
+        socket.emit('trigger','manito');
         e.preventDefault();
       })
     </script>

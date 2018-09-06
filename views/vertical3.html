@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Information</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+
+    <script src="/timer/jquery.time-to.js"></script>
+    <link href="/timer/timeTo.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <!-- <iframe id="village" src="http://hacker-village.innolab.us/"> -->
+  <body>
+    <embed type="text/html" id="village3" src="http://hacker-village.innolab.us/">
+    <div id="vertical_timetable3">
+      <img src="./image/p_timetable.png">
+    </div>
+    <div id="vertical_main3">
+      <img src="./image/p_main.png">
+    </div>
+    <script>
+      var socket = io();
+
+      socket.on('change',function(option){
+        if(option=="village3"){
+          $('#village3').css('visibility','visible');
+          $('#vertical_timetable3').css('visibility','hidden');
+          $('#vertical_main3').css('visibility','hidden');
+        }else if(option=="timetable3"){
+          $('#village3').css('visibility','hidden');
+          $('#vertical_timetable3').css('visibility','visible');
+          $('#vertical_main3').css('visibility','hidden');
+        }else if(option=="vertical_main3"){
+          $('#village3').css('visibility','hidden');
+          $('#vertical_timetable3').css('visibility','hidden');
+          $('#vertical_main3').css('visibility','visible');
+        }
+      })
+
+
+    </script>
+  </body>
+</html>
