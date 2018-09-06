@@ -30,42 +30,60 @@
 
     </div>
     <div id="info">
+      <p class="info_text"></p>
+    </div>
+    <div id="submit">
 
     </div>
     <script>
       var socket = io();
 
-      socket.on('change',function(option){
+      socket.on('change',function(option,msg){
         if(option=="timer"){
           $('#timer').css('visibility','visible');
           $('.timer_box').show();
           $('#pizza').hide();
           $('#info').hide();
           $('#manito').hide();
+          $('#submit').hide();
         }else if(option=="hack_main"){
           $('#timer').css('visibility','hidden');
           $('.timer_box').show();
           $('#pizza').hide();
           $('#manito').hide();
           $('#info').hide();
+          $('#submit').hide();
         }else if(option=="pizza"){
           $('.timer_box').hide();
           $('#pizza').show();
           $('#timer').css('visibility','hidden');
           $('#info').hide();
           $('#manito').hide();
+          $('#submit').hide();
         }else if(option=="manito"){
           $('.timer_box').hide();
           $('#pizza').hide();
           $('#timer').css('visibility','hidden');
           $('#info').hide();
           $('#manito').show();
+          $('#submit').hide();
         }else if(option=="info"){
           $('.timer_box').hide();
           $('#pizza').hide();
           $('#timer').css('visibility','hidden');
           $('#manito').hide();
-          $('#info').show();
+          $('#info').css('display','inline-table');
+          // var text = msg.replace("<br>","\r\n");
+          // console.log(text);
+          $('.info_text').text(msg);
+          $('#submit').hide();
+        }else if(option=="submit"){
+          $('.timer_box').hide();
+          $('#pizza').hide();
+          $('#timer').css('visibility','hidden');
+          $('#info').hide();
+          $('#manito').hide();
+          $('#submit').show();
         }
       })
 

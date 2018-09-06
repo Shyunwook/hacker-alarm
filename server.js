@@ -28,9 +28,9 @@ app.get('/beam',function(req,res){
 
 app.get('/admin',function(req,res){
   io.on('connection',function(socket){
-    socket.on('trigger',function(option){
+    socket.on('trigger',function(option,msg){
       console.log('event send!');
-      io.emit('change',option);
+      io.emit('change',option,msg);
     })
   })
   res.render('admin.html');

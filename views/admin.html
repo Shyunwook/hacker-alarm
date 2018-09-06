@@ -32,6 +32,9 @@
       <button id="timer_btn">타이머</button>
       <button id="pizza_btn">피자!!</button>
       <button id="manito_btn">마니또</button>
+      <button id="submit_btn">산출물 안내</button>
+      <h4>인포 입력창</h4>
+      <textarea type="text" class="info_input"></textarea>
       <button id="info_btn">인포</button>
     </div>
     <script>
@@ -102,8 +105,13 @@
         e.preventDefault();
       })
 
+      $('#submit_btn').on('click',function(e){
+        socket.emit('trigger','submit');
+        e.preventDefault();
+      })
+
       $('#info_btn').on('click',function(e){
-        socket.emit('trigger','info');
+        socket.emit('trigger','info',$('.info_input').val().replace(/\n/g, "<br>"));
         e.preventDefault();
       })
     </script>

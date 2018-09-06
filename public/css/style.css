@@ -41,11 +41,34 @@ body{
   background-size: cover;
 }
 
-#info{
+#submit{
   display: none;
   height: 100vh;
-  background: url(../image/info.png);
+  background: url(../image/submit.jpg);
   background-size: cover;
+}
+
+#info{
+  display: none;
+  width: 100%;
+  background: url(../image/bg_3.png);
+  background-size: cover;
+  height: 100vh;
+}
+
+#info p{
+  margin: 0;
+  font-size: 154px;
+  font-weight: bold;
+  color: #f7f815;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  top: -100px;
+  font-family: NanumSquareRoundOTFEB;
+  font-style: normal;
+  font-stretch: normal;
 }
 
 .verticalPC button, .beam button{
